@@ -26,24 +26,27 @@ function Budget ({ setBudget, setRemaining, setShowBudget }) {
   }
 
   return (
-    <div className='container bg-white p-5 rounded-5 w-50'>
-      <h1>Coloca tu Presupuesto</h1>
-      {error ? <Error msj='El Presupuesto es incorrecto' /> : null}
-      <form
-        className='d-flex flex-column gap-2'
-        onSubmit={onSubmit}
-      >
-        <input
-          type='number'
-          placeholder='Presupuesto inicial'
-          onChange={handleValue}
-        />
-        <button
-          className='btn btn-primary'
-          type='submit'
-        >Definir Presupuesto
-        </button>
-      </form>
+    <div className='w-50'>
+      <div className='top' />
+      <div className='container bg-white p-5 paper'>
+        <h1>Coloca tu Presupuesto</h1>
+        {error ? <Error msj='El Presupuesto es incorrecto' /> : null}
+        <form
+          className='d-flex flex-column gap-2'
+          onSubmit={onSubmit}
+        >
+          <input
+            type='number'
+            placeholder='Presupuesto inicial'
+            onChange={handleValue}
+          />
+          <button
+            className='btn btn-primary'
+            type='submit'
+          >Definir Presupuesto
+          </button>
+        </form>
+      </div>
     </div>
   )
 }

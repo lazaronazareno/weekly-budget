@@ -48,40 +48,45 @@ const Expenses = ({ setExpense, setIsExpense }) => {
   }
 
   return (
-    <form
-      className='d-flex flex-column rounded-2 m-1 p-3 bg-white w-50 gap-2'
-      onSubmit={onSubmit}
-    >
-      <h2>Agrega tus gastos</h2>
+    <div className='w-50 m-1'>
+      <div className='top' />
+      <form
+        className='d-flex flex-column p-3 bg-white gap-4 paper'
+        onSubmit={onSubmit}
+      >
+        <h2>Agrega tus gastos</h2>
 
-      {error
-        ? <Error msj='Ambos campos son obligatorios o Presupuesto Incorrecto' />
-        : null}
+        {error
+          ? <Error msj='Ambos campos son obligatorios o Presupuesto Incorrecto' />
+          : null}
 
-      <div>
-        <label>Gasto</label>
-        <input
-          type='text'
-          name='name'
-          placeholder='Ej: Transporte'
-          value={name}
-          onChange={handleChange}
-        />
-      </div>
+        <div>
+          <label>Gasto</label>
+          <input
+            type='text'
+            className='w-100'
+            name='name'
+            placeholder='Ej: Transporte'
+            value={name}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <label>Valor</label>
-        <input
-          type='number'
-          name='value'
-          placeholder='Ej: 500'
-          value={value}
-          onChange={handleChange}
-        />
-      </div>
+        <div>
+          <label>Valor</label>
+          <input
+            type='number'
+            className='w-100'
+            name='value'
+            placeholder='Ej: 500'
+            value={value}
+            onChange={handleChange}
+          />
+        </div>
 
-      <button type='submit' className='btn btn-primary'>Agregar gasto</button>
-    </form>
+        <button type='submit' className='btn btn-primary'>Agregar gasto</button>
+      </form>
+    </div>
   )
 }
 

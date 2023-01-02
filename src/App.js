@@ -59,7 +59,7 @@ function App () {
   }, [remaining])
 
   return (
-    <div className='App bg-light p-3'>
+    <div className='App p-3'>
       <h1>Balance semanal</h1>
 
       {!budget
@@ -77,13 +77,14 @@ function App () {
               remaining={remaining}
               setBudget={setBudget}
               setRemaining={setRemaining}
+              setExpenses={setExpenses}
             />
-            <div className='d-flex'>
+            <div className='d-flex m-3 container-fluid notes'>
               <Expenses
                 setExpense={setExpense}
                 setIsExpense={setIsExpense}
               />
-              <div className='d-flex flex-column w-50'>
+              <div className='d-flex flex-column w-50 m-1'>
                 <List expenses={expenses} />
               </div>
             </div>
