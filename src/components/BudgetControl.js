@@ -2,12 +2,17 @@ import React from 'react'
 import { checkBudget } from '../utils'
 import PropTypes from 'prop-types'
 
-const BudgetControl = ({ budget, remaining, setBudget }) => {
+const BudgetControl = ({ budget, remaining, setBudget, setRemaining }) => {
+  const handleReset = () => {
+    setBudget(null)
+    setRemaining(null)
+  }
+
   return (
     <div className='d-flex gap-1 px-1'>
       <span className='bg-primary fs-3 flex-grow-1 rounded'>Presupuesto Semanal: $ {budget}</span>
       <span className={`rounded fs-3 flex-grow-1 ${checkBudget(budget, remaining)}`}>Restante: $ {remaining}</span>
-      <button className='btn btn-danger' onClick={() => setBudget(null)}>Reiniciar</button>
+      <button className='btn btn-danger' onClick={handleReset}>Reiniciar</button>
     </div>
   )
 }

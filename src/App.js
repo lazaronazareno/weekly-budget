@@ -76,6 +76,7 @@ function App () {
               budget={budget}
               remaining={remaining}
               setBudget={setBudget}
+              setRemaining={setRemaining}
             />
             <div className='d-flex'>
               <Expenses
